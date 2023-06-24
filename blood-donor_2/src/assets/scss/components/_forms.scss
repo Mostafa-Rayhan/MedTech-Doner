@@ -1,0 +1,359 @@
+/* ==== 
+ --------- (3.2) form styles start ---------
+ ==== */
+.input {
+    margin-bottom: 25px;
+
+    input,
+    textarea {
+        padding: 14px 20px;
+        background-color: $white;
+        margin: 0px;
+
+        @include responsive(lg) {
+            padding: 12px 15px;
+        }
+    }
+
+    textarea {
+        max-height: 180px;
+
+        @include responsive(lg) {
+            max-height: 150px;
+        }
+    }
+}
+
+.input-group-column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    @include responsive(xs) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0px;
+    }
+
+    .input {
+        flex-grow: 1;
+        flex-basis: 0px;
+        min-width: 0px;
+
+        @include responsive(xs) {
+            width: 100%;
+            flex-grow: unset;
+            flex-basis: unset;
+            min-width: unset;
+        }
+    }
+}
+
+.input-group-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 5px 5px 0px;
+    border: 1px solid rgb(109, 109, 109);
+
+    @include responsive(xxs) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    input {
+        background-color: transparent;
+        padding: 14px 20px;
+        width: auto;
+        flex-grow: 1;
+        margin: 0px;
+
+        @include responsive(lg) {
+            padding: 12px 15px;
+        }
+
+        @include responsive(xxs) {
+            padding: 11px 15px;
+            width: 100%;
+            border: 1px solid rgb(109, 109, 109);
+        }
+
+        &::placeholder {
+            color: #676767;
+        }
+    }
+
+    .button {
+        &:hover {
+            background-color: $white;
+            color: $secondary-color;
+        }
+    }
+}
+
+.input-group-btn--secondary {
+    padding: 0px;
+    border: 0px solid transparent;
+    background-color: #f9f9f9;
+
+    @include responsive(xxs) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    input {
+        background-color: #f9f9f9;
+
+        @include responsive(xxs) {
+            border: 0px solid transparent;
+            padding: 9px 15px;
+        }
+
+        &::placeholder {
+            color: $theme-color;
+        }
+    }
+
+    .button {
+        @include box(56px);
+        border-radius: 0px;
+        padding: 0px;
+
+        @include responsive(lg) {
+            @include box(46px);
+            border-radius: 0px;
+        }
+    }
+}
+
+.input {
+    .nice-select {
+        width: 100%;
+        border: 0px solid transparent;
+        border-radius: 0px;
+        padding: 14px 20px;
+        background-color: $quaternary-color;
+        height: auto;
+        line-height: 28px;
+        margin-bottom: 24px;
+        font-size: 16px;
+
+        @include responsive(lg) {
+            padding: 12px 15px;
+        }
+
+        &::after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f0d7";
+            border: 0px solid transparent;
+            margin: 0px;
+            transform: translateY(-50%) rotate(0deg);
+            width: auto;
+            height: auto;
+            font-size: 16px;
+            color: $theme-color;
+            right: 20px;
+
+            @include responsive(lg) {
+                right: 15px;
+            }
+        }
+
+        .list {
+            width: 100%;
+            background-color: $quaternary-color;
+            box-shadow: 0px 4px 24px 0px rgba(19, 33, 110, 0.3);
+            min-width: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: #e4e4e4;
+                border-radius: 10px;
+
+                @include responsive(lg) {
+                    border-radius: 0px;
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $primary-color;
+                border-radius: 10px;
+
+                @include responsive(lg) {
+                    border-radius: 0px;
+                }
+            }
+
+            @include responsive(xs) {
+                min-width: 100px;
+            }
+
+            &:hover {
+                .selected {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .option {
+            background-color: $white;
+            color: $primary-color;
+            min-height: auto;
+            line-height: 28px;
+            padding: 8px 16px;
+            text-transform: capitalize;
+            text-align: left;
+            font-size: 16px;
+            margin: 0px;
+
+            @include responsive(xs) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
+
+        .selected {
+            background-color: $secondary-color  !important;
+            color: $white;
+
+            &:hover {
+                color: $white  !important;
+            }
+        }
+    }
+}
+
+// search form styles start
+.search {
+    background-color: $white;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    display: none;
+
+    @include responsive(sm) {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    form {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+
+        @include responsive(sm) {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+
+    input {
+        margin: 0px;
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 30px;
+        border: 1px solid #c8dbf8;
+        outline: none;
+        background-color: #f5f5f5;
+        color: $primary-color;
+        font-weight: 500;
+
+        @include responsive(lg) {
+            width: 70%;
+        }
+
+        @include responsive(sm) {
+            width: 80%;
+            padding: 10px 20px;
+        }
+
+        @include responsive(xs) {
+            width: 100%;
+        }
+
+        &:focus {
+            border: 1px solid $secondary-color;
+        }
+
+        &::placeholder {
+            font-weight: 500;
+        }
+    }
+
+    .button {
+        border: none;
+        outline: none;
+        margin-top: 30px;
+        border: 0px solid transparent !important;
+
+        @include responsive(lg) {
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-top: 25px;
+        }
+
+        &:hover {
+            border: 0px solid transparent !important;
+            outline: none !important;
+            box-shadow: none !important;
+            color: $white;
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 20%;
+        right: 25%;
+        color: $primary-color;
+
+        &:hover {
+            color: $secondary-color;
+        }
+
+        @include responsive(lg) {
+            top: 20%;
+            right: 10%;
+        }
+
+        @include responsive(sm) {
+            top: 25%;
+            right: 12px;
+        }
+
+        i {
+            font-size: 40px;
+
+            @include responsive(sm) {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+/* ==== 
+ --------- (3.2) form styles end ---------
+ ==== */

@@ -1,0 +1,31 @@
+/* ==== 
+ --------- (1.2) variables start ---------
+ ==== */
+
+// font family
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+// theme default
+$theme-font: 'Jost', sans-serif;
+$theme-bg: #ffffff;
+$theme-color: #666666;
+
+// colors
+$white: #ffffff;
+$black: #000000;
+$primary-color: #111111;
+$secondary-color: #ea062b;
+$tertiary-color: #11111126;
+$quaternary-color: #f5f5f5;
+$quinary-color: #ffc92e;
+
+// transitions
+$primary-transition: all 0.3s ease-out;
+$secondary-transition: all 0.4s ease-in;
+
+// box shadow
+$primary-shadow: 0px 9px 52px 0px rgba(0, 0, 0, 0.07);
+
+/* ==== 
+ --------- (1.2) variables end ---------
+ ==== */

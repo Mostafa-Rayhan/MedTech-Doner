@@ -1,0 +1,163 @@
+/* ==== 
+ --------- (2.1) reset styles start ---------
+ ==== */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $theme-font;
+    color: $theme-color;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 0;
+    background-color: $theme-bg;
+    overflow-x: hidden;
+
+    @include responsive(lg) {
+        font-size: 16px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #cae6f7;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-thumb {
+        background-color: $secondary-color;
+        border-radius: 5px;
+    }
+}
+
+::-moz-selection {
+    color: #ffffff;
+    background-color: #1770c8;
+}
+
+::selection {
+    color: #ffffff;
+    background-color: #1770c8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+
+    img {
+        border: 0px;
+        outline: 0px;
+    }
+
+    i {
+        transition: inherit;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        img {
+            border: 0px;
+            outline: 0px;
+        }
+    }
+}
+
+button {
+    border: 0px;
+    outline: 0px;
+
+    &:focus {
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 0px;
+    }
+}
+
+ul,
+ol {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0px;
+    padding: 0px;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 0px;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+    display: block;
+}
+
+// .container {
+//     padding-left: 15px;
+//     padding-right: 15px;
+
+//     @include responsive(minScreenDesktop) {
+//         max-width: 1170px;
+//     }
+
+//     @include responsive(minScreenLaptop) {
+//         max-width: 1170px;
+//     }
+// }
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row>* {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ==== 
+   --------- (2.1) reset styles end ---------
+ ==== */

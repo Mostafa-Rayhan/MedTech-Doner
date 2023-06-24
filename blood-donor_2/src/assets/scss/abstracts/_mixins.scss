@@ -1,0 +1,153 @@
+/* ==== 
+ --------- (1.1) mixins start ---------
+ ==== */
+
+@mixin font($size, $height, $weight, $color) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin background($color, $repeat, $size, $position) {
+    background-color: $color;
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+@mixin center($width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+@mixin box($value) {
+    width: $value;
+    min-width: $value;
+    height: $value;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint==minScreenLargeDesktop {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minScreenDesktop {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minScreenLaptop {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minScreenMiniLaptop {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minScreenTablet {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minScreenPhone {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==xl {
+        @media (max-width: 1399px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==lg {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==md {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==sm {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==xs {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==xxs {
+        @media (max-width: 424px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==desktop {
+        @media (min-width: 1400px) and (max-width: 1799px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==laptop {
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==miniLaptop {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==tablet {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==phone {
+        @media (min-width: 576px) and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==smallPhone {
+        @media (min-width: 320px) and (max-width: 575px) {
+            @content;
+        }
+    }
+}
+
+/* ==== 
+   --------- (1.1) mixins end ---------
+ ==== */

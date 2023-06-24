@@ -1,0 +1,337 @@
+/* ==== 
+ --------- (4.2) hero section styles start ---------
+ ==== */
+.hero-slider-item {
+    padding-top: 210px;
+    padding-bottom: 300px;
+    position: relative;
+    z-index: 1;
+    &.gap-style {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+    &.gap-style-3 {
+        padding-top: 250px;
+        padding-bottom: 250px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
+        z-index: -1;
+    }
+    @include responsive(sm) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        &.gap-style {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        &.gap-style-3 {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        &::before {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+        }
+    }
+    @include responsive(md) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        &.gap-style {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        &.gap-style-3 {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        &::before {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+        }
+    }
+    &.overly-style-two {
+        &::before {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        }
+    }
+}
+.hero-slider-content {
+    max-width: 860px;
+    .intro-video {
+        margin-bottom: 40px;
+        span {
+            font-size: 20px;
+            font-weight: 700;
+            color: $primary-color;
+            margin-left: 10px;
+        }
+    }
+    h1 {
+        margin-bottom: 50px;
+        font-size: 80px;
+    }
+    @include responsive(lg) {
+        h1 {
+            line-height: 85px;
+        }
+    }
+    @include responsive(md) {
+        text-align: center;
+        .intro-video {
+            margin: auto;
+            display: table;
+            margin-bottom: 30px;
+            span {
+                font-size: 16px;
+            }
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 40px;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+        &.style-three {
+            h3 {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @include responsive(sm) {
+        text-align: center;
+        .intro-video {
+            margin: auto;
+            display: table;
+            margin-bottom: 30px;
+            span {
+                font-size: 16px;
+            }
+        }
+        h4 {
+            margin-bottom: 20px !important;
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 36px;
+            line-height: 45px;
+            margin-bottom: 20px;
+        }
+        &.style-three {
+            h3 {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    
+    &.style-two {
+        text-align: center;
+        margin: auto;
+        h4 {
+            color: $quaternary-color;
+            margin-bottom: 40px;
+        }
+        h3 {
+            color: $white;
+        }
+        h1 {
+            
+            color: $white;
+        }
+        .hero-slider-btn {
+            .button  {
+                margin-right: 30px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .button--quaternary {
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+    }
+    &.style-three {
+        max-width: 1070px;
+        h3 {
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+    }
+}
+.hero-slider {
+    &.owl-theme {
+        .owl-nav {
+            margin-top: 0 !important;
+            .owl-prev, .owl-next {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid $secondary-color;
+                color: $secondary-color;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 100px;
+                border-radius: 0;
+                font-size: 20px;
+                &:hover {
+                    background-color: $secondary-color;
+                    color: $white;
+                }
+            }
+            .owl-next {
+                left: auto;
+                right: 100px;
+            }
+        }
+    }
+    .owl-item {
+		&.active {
+			.hero-slider-content {
+				overflow: hidden;
+                .intro-video {
+                    animation: .3s fadeInDownBig;
+                }
+                h4 {
+                    animation: .3s fadeInDownBig;
+                }
+				h3 {
+					animation: .6s fadeInDownBig;
+				}
+				h1 {
+					animation: .9s fadeInDownBig; 
+				}
+				.button {
+					animation: 1s fadeInDownBig;
+				}
+			}
+			.animation-style-two {
+				.intro-video {
+					animation: .3s fadeInLeftBig;
+				}
+				h4 {
+					animation: .3s fadeInLeftBig;
+				}
+				h3 {
+					animation: .6s fadeInLeftBig; 
+				}
+				h1 {
+					animation: .9s fadeInLeftBig; 
+				}
+				.button {
+					animation: 1s fadeInLeftBig;
+				}
+			}
+			.animation-style-three {
+				.intro-video {
+					animation: .3s fadeInUpBig;
+				}
+				h4 {
+					animation: .3s fadeInUpBig;
+				}
+				h3 {
+					animation: .6s fadeInUpBig; 
+				}
+				h1 {
+					animation: .9s fadeInUpBig; 
+				}
+				.button {
+					animation: 1s fadeInUpBig;
+				}
+			}
+		}
+	}
+    @include responsive(xl) {
+        &.owl-theme {
+            .owl-nav { 
+                .owl-prev, .owl-next {
+                    top: auto;
+                    bottom: 150px;
+                    transform: unset;
+                    left: 50px;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+                .owl-next {
+                    left: auto;
+                    right: 50px;
+                }
+            }
+        }
+    }
+    @include responsive(lg) {
+        &.owl-theme {
+            .owl-nav { 
+                .owl-prev, .owl-next {
+                    top: auto;
+                    bottom: 150px;
+                    transform: unset;
+                    left: 50px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                }
+                .owl-next {
+                    left: auto;
+                    right: 50px;
+                }
+            }
+        }
+    }
+    @include responsive(md) {
+        &.owl-theme {
+            .owl-nav { 
+                .owl-prev, .owl-next {
+                    top: auto;
+                    bottom: 0;
+                    transform: unset;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                }
+                .owl-next {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+    @include responsive(sm) {
+        &.owl-theme {
+            .owl-nav { 
+                .owl-prev, .owl-next {
+                    top: auto;
+                    bottom: 0;
+                    transform: unset;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                }
+                .owl-next {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ==== 
+ --------- (4.2) hero section styles end ---------
+ ==== */

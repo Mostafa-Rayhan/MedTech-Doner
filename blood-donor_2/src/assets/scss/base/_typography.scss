@@ -1,0 +1,571 @@
+/* ==== 
+ --------- (2.2) typography styles start ---------
+ ==== */
+
+// paragraphy styles
+p,
+th,
+td,
+li,
+input,
+textarea,
+select,
+label,
+blockquote,
+.span {
+    @include font(18px, 28px, 400, $theme-color);
+    margin-top: -6px;
+    margin-bottom: 29px;
+
+    @include responsive(lg) {
+        margin-bottom: 25px;
+    }
+
+    &.primary {
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $secondary-color;
+    }
+
+    &.secondary {
+        font-size: 18px;
+        line-height: 30px;
+        color: $primary-color;
+        margin-top: -7px;
+
+        @include responsive(lg) {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    &.tertiary {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        color: $primary-color;
+        margin-top: -4px;
+        margin-bottom: 31px;
+
+        @include responsive(lg) {
+            font-size: 18px;
+            line-height: 26px;
+            margin-top: -5px;
+            margin-bottom: 27px;
+        }
+
+        @include responsive(sm) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -5px;
+        @include responsive(sm) {
+            font-size: 16px;
+        }
+    }
+
+    &.neutral-bottom-tertiary {
+        margin-bottom: -3px;
+    }
+
+    &.neutral-ascender {
+        margin-top: -8px;
+    }
+
+    &.neutral-descender {
+        margin-bottom: -9px;
+    }
+
+    &.neutral-ascender-tertiary {
+        margin-top: -6px;
+    }
+
+    &.neutral-descender-tertiary {
+        margin-bottom: -8px;
+
+        @include responsive(lg) {
+            margin-bottom: -7px
+        }
+    }
+
+    &.descender {
+        margin-bottom: 15px;
+
+        @include responsive(lg) {
+            margin-bottom: 21px;
+        }
+    }
+
+    &.descender-tertiary {
+        margin-bottom: 26px;
+
+        @include responsive(lg) {
+            margin-bottom: 22px;
+        }
+    }
+}
+
+
+// heading styles
+h1,
+h1>a,
+h1>span {
+    @include font(72px, 82px, 700, $primary-color);
+    margin-top: -10px;
+    margin-bottom: 34px;
+
+    @include responsive(lg) {
+        font-size: 48px;
+        line-height: 66px;
+        margin-top: -12px;
+        margin-bottom: 25px;
+    }
+
+    @include responsive(sm) {
+        font-size: 36px;
+        line-height: 48px;
+        margin-top: -8px;
+        margin-bottom: 26px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: 0px;
+
+        @include responsive(lg) {
+            margin-bottom: -6px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -4px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -10px;
+
+        @include responsive(lg) {
+            margin-top: -13px;
+        }
+
+        @include responsive(sm) {
+            margin-top: -10px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -15px;
+
+        @include responsive(lg) {
+            margin-bottom: -16px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -12px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 19px;
+
+        @include responsive(lg) {
+            margin-bottom: 14px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 18px;
+        }
+    }
+
+}
+
+h2,
+h2>a,
+h2>span {
+    @include font(48px, 66px, 700, $primary-color);
+    margin-top: -12px;
+    margin-bottom: 28px;
+
+    @include responsive(lg) {
+        font-size: 36px;
+        line-height: 48px;
+        margin-top: -8px;
+        margin-bottom: 27px;
+    }
+
+    @include responsive(sm) {
+        font-size: 30px;
+        line-height: 42px;
+        margin-bottom: 26px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -6px;
+
+        @include responsive(lg) {
+            margin-bottom: -3px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -4px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -13px;
+
+        @include responsive(lg) {
+            margin-top: -10px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -14px;
+
+        @include responsive(lg) {
+            margin-bottom: -10px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -9px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 17px;
+
+        @include responsive(lg) {
+            margin-bottom: 18px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &.light {
+        font-size: 72px;
+        line-height: 82px;
+        font-weight: 600;
+        color: $tertiary-color;
+
+        @include responsive(lg) {
+            font-size: 48px;
+            line-height: 66px;
+        }
+
+        @include responsive(sm) {
+            font-size: 36px;
+            line-height: 48px;
+        }
+    }
+
+    &.neutral-ascender-light {
+        margin-top: -10px;
+
+        @include responsive(lg) {
+            margin-top: -13px;
+        }
+
+        @include responsive(sm) {
+            margin-top: -10px;
+        }
+    }
+
+    &.descender-light {
+        margin-bottom: 19px;
+
+        @include responsive(lg) {
+            margin-bottom: 14px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 18px;
+        }
+    }
+
+}
+
+h3,
+h3>a,
+h3>span {
+    @include font(36px, 48px, 600, $secondary-color);
+    margin-top: -8px;
+    margin-bottom: 30px;
+
+    @include responsive(lg) {
+        font-size: 30px;
+        line-height: 42px;
+        margin-top: -7px;
+        margin-bottom: 26px;
+    }
+
+    @include responsive(sm) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: -5px;
+        margin-bottom: 28px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -4px;
+
+        @include responsive(sm) {
+            margin-bottom: -2px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -11px;
+
+        @include responsive(lg) {
+            margin-top: -10px;
+        }
+
+        @include responsive(sm) {
+            margin-top: -7px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -12px;
+
+        @include responsive(lg) {
+            margin-bottom: -11px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -8px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 22px;
+
+        @include responsive(lg) {
+            margin-bottom: 19px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 22px;
+        }
+    }
+}
+
+h4,
+h4>a,
+h4>span {
+    @include font(30px, 42px, 600, $primary-color);
+    margin-top: -8px;
+    margin-bottom: 30px;
+
+    @include responsive(lg) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: -6px;
+        margin-bottom: 28px;
+    }
+
+    @include responsive(sm) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -4px;
+
+        @include responsive(lg) {
+            margin-bottom: -2px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -9px;
+
+        @include responsive(lg) {
+            margin-top: -7px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -11px;
+
+        @include responsive(lg) {
+            margin-bottom: -8px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -7px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 23px;
+
+        @include responsive(lg) {
+            margin-bottom: 22px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 23px;
+        }
+    }
+}
+
+h5,
+h5>a,
+h5>span {
+    @include font(24px, 32px, 700, $primary-color);
+    margin-top: -5px;
+    margin-bottom: 32px;
+
+    @include responsive(lg) {
+        font-size: 22px;
+        line-height: 30px;
+        margin-top: -6px;
+        margin-bottom: 28px;
+    }
+
+    @include responsive(sm) {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 26px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -2px;
+
+        @include responsive(sm) {
+            margin-bottom: -4px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -7px;
+
+        @include responsive(lg) {
+            margin-top: -8px;
+        }
+
+        @include responsive(sm) {
+            margin-top: -7px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -8px;
+
+        @include responsive(lg) {
+            margin-bottom: -7px
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -9px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 27px;
+
+        @include responsive(lg) {
+            margin-bottom: 23px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 21px;
+        }
+    }
+
+}
+
+h6,
+h6>a,
+h6>span {
+    @include font(22px, 30px, 700, $primary-color);
+    margin-top: -6px;
+    margin-bottom: 32px;
+
+    @include responsive(lg) {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 26px;
+    }
+
+    @include responsive(sm) {
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: -7px;
+        margin-bottom: 25px;
+    }
+
+    &.neutral-bottom {
+        margin-bottom: -2px;
+
+        @include responsive(lg) {
+            margin-bottom: -4px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: -5px;
+        }
+    }
+
+    &.neutral-ascender {
+        margin-top: -8px;
+
+        @include responsive(lg) {
+            margin-top: -8px;
+        }
+    }
+
+    &.neutral-descender {
+        margin-bottom: -7px;
+
+        @include responsive(lg) {
+            margin-bottom: -9px;
+        }
+    }
+
+    &.descender {
+        margin-bottom: 27px;
+
+        @include responsive(lg) {
+            margin-bottom: 21px;
+        }
+    }
+
+}
+
+// link styles
+a,
+button {
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+    color: $white;
+    font-weight: 700;
+    display: inline-block;
+    border: 0px;
+    outline: 0px;
+    transition: $primary-transition;
+
+    @include responsive(lg) {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $primary-color;
+        border: 0px;
+        outline: 0px;
+    }
+}
+
+/* ==== 
+ --------- (2.2) typography styles end ---------
+ ==== */

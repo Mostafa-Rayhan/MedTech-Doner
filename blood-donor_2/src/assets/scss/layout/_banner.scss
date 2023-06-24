@@ -1,0 +1,45 @@
+/* ==== 
+ --------- (4.3) banner styles start ---------
+ ==== */
+
+.banner {
+    padding: 158px 0px;
+
+    @include responsive(lg) {
+        padding: 100px 0px;
+    }
+
+    @include responsive(lg) {
+        padding: 80px 0px;
+    }
+
+    h2 {
+        text-align: center;
+        color: $white;
+        margin-bottom: 15px;
+
+        @include responsive(lg) {
+            margin-bottom: 15px;
+        }
+
+        @include responsive(sm) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .breadcrumb {
+        margin-bottom: -5px;
+
+        .breadcrumb-item {
+            padding-right: 10px;
+
+            &::before {
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+/* ==== 
+ --------- (4.3) banner styles end ---------
+ ==== */

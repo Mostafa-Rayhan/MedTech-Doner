@@ -1,0 +1,131 @@
+/* ==============
+ ========= css documentation =========
+
+ template name: Blad Ai
+ version: 1.0
+ description: Blood Donation Activism & Campaign HTML Template
+ author: CropTheme
+ author url: https://themeforest.net/user/croptheme
+
+ 01. abstracts
+     1.1 --> mixins
+     1.2 --> variables
+
+ 02. base
+     2.1 --> reset
+     2.2 --> typography
+     2.3 --> global
+
+ 03. components
+     3.1 --> buttons
+     3.2 --> forms
+
+ 04. layout
+     4.1 --> header
+     4.2 --> hero Section
+     4.3 --> banner
+     4.4 --> all sections
+     4.5 --> footer
+
+     =========================
+     01. overview section styles start
+     ------------------------------------------------------
+     02. organization section styles start
+     ------------------------------------------------------
+     03. counter styles start
+     ------------------------------------------------------
+     04. service area section styles start
+     ------------------------------------------------------
+     05. call now section styles start
+     ------------------------------------------------------
+     06. campaign section styles start
+     ------------------------------------------------------
+     07. testimonial section styles start
+     ------------------------------------------------------
+     08. donor section styles start
+     ------------------------------------------------------
+     09. appointment section styles start
+     ------------------------------------------------------
+     10. team section styles start
+     ------------------------------------------------------
+     11. blog section styles start
+     ------------------------------------------------------
+     12. cta section styles start
+     ------------------------------------------------------
+     13. home two overview section styles start
+     ------------------------------------------------------
+     14. counter two styles start
+     ------------------------------------------------------
+     15. process section styles start
+     ------------------------------------------------------
+     16. campaign two section styles start
+     ------------------------------------------------------
+     17. testimonial two section styles start
+     ------------------------------------------------------
+     18. gallery section styles start
+     ------------------------------------------------------
+     19. appointment two section styles start
+     ------------------------------------------------------
+     20. cta two section styles start
+     ------------------------------------------------------
+     21. blog two section styles start
+     ------------------------------------------------------
+     22. home three overview section styles start
+     ------------------------------------------------------
+     23. donator section styles start
+     ------------------------------------------------------
+     24. ppointment three section styles start
+     ------------------------------------------------------
+     25. who area section styles start
+     ------------------------------------------------------
+     26. campaign details section styles start
+     ------------------------------------------------------
+     27. service details section styles start
+     ------------------------------------------------------
+     28. question section styles start
+     ------------------------------------------------------
+     29. privacy section styles start
+     ------------------------------------------------------
+     30. error section styles start
+     ------------------------------------------------------
+     31. donate now section styles start
+     ------------------------------------------------------
+     32. registration form section styles start
+     ------------------------------------------------------
+     33. blog default section styles start
+     ------------------------------------------------------
+     34. blog details section styles start
+     ------------------------------------------------------
+     35. contact section styles start
+     ------------------------------------------------------
+     36. user section styles start
+     ------------------------------------------------------
+     37. google map
+
+     =========================
+============== */
+
+// @import 'nice-select';
+
+// abstract styles
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+// base styles
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/global";
+
+// component styles
+@import "./components/buttons";
+@import "./components/forms";
+@import "./components/preloader";
+
+// layout styles
+@import "./layout/header";
+@import "./layout/hero-section";
+@import "./layout/banner";
+@import "./layout/sections";
+@import "./layout/footer";
+
+// @import 'react-bootstrap-sidebar-menu/dist/sidebar-menu.scss'  

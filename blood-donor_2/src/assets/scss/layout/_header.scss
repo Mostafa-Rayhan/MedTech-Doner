@@ -1,0 +1,848 @@
+/* ==== 
+ --------- (4.1) header styles start ---------
+ ==== */
+
+// topbar styles start
+.topbar {
+    background-color: $primary-color;
+    @include responsive(md) {
+        padding-top: 10px;
+        padding-bottom: 15px;
+        .topbar-area__right {
+            display: initial;
+            &::after {
+                display: none;
+            }
+            .neutral-bottom {
+                display: none;
+            }
+            .social {
+                display: none;
+            }
+        }
+    }
+    @include responsive(sm) {
+        display: none;
+    }
+}
+
+.topbar-area__left {
+    padding: 8px 0px;
+
+    @include responsive(lg) {
+        padding: 10px 0px;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    a {
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: $primary-transition;
+
+        i {
+            padding-right: 10px;
+            border-right: 1px solid $white;
+            line-height: 20px;
+            transition: inherit;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.topbar-area__right {
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+
+    @include responsive(lg) {
+        padding: 10px 0px;
+    }
+
+    @include responsive(lg) {
+        gap: 15px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 30px;
+        top: 0px;
+        bottom: 0px;
+        width: 3000px;
+        background-color: $secondary-color;
+        z-index: -1;
+
+        @include responsive(lg) {
+            left: 0px;
+        }
+    }
+
+    p {
+        color: $white;
+        font-weight: 500;
+        font-size: 16px;
+    }
+}
+
+.topbar--secondary {
+    .topbar-area__right {
+        &::after {
+            content: none;
+        }
+
+        .social {
+            a {
+                &:hover {
+                    background-color: $secondary-color;
+
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// navbar styles start
+.header {
+    z-index: 9999;
+
+    @include responsive(lg) {
+        box-shadow: $primary-shadow;
+    }
+}
+
+.header--secondary {
+    .navbar {
+        &::after {
+            content: none;
+        }
+    }
+}
+
+.header-active {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    box-shadow: $primary-shadow;
+}
+
+.navbar {
+    padding: 0 0px;
+    background-color: $white;
+    position: relative;
+    z-index: 9;
+
+    @include responsive(laptop) {
+        padding: 15px 0px;
+    }
+
+    @include responsive(lg) {
+        padding: 15px 0px;
+    }
+
+    
+
+    li {
+        margin: 0px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0%;
+        bottom: 0px;
+        width: 32%;
+        max-height: 100px;
+        background-color: $secondary-color;
+        z-index: -1;
+
+        @include responsive(minScreenLargeDesktop) {
+            width: 31%;
+        }
+
+        @include responsive(desktop) {
+            width: 27%;
+        }
+
+        @include responsive(laptop) {
+            width: 23%;
+        }
+
+        @include responsive(xl) {
+            max-height: 92px;
+        }
+
+        @include responsive(sm) {
+            max-height: 80px;
+            width: 40%;
+        }
+
+        @include responsive(xxs) {
+            width: 41%;
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .navbar {
+        padding: 0;
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1550px) {
+    .navbar {
+        &::after {
+            width: 20%;
+        }
+    }
+}
+
+@media only screen and (min-width: 2200px) {
+    .navbar {
+        &::after {
+            width: 35%;
+        }
+    }
+}
+
+.navbar-brand {
+    margin: 0px;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.logo {
+    max-width: 154px;
+
+    @include responsive(sm) {
+        max-width: 85px;
+    }
+
+    @include responsive(xxs) {
+        max-width: 85px;
+    }
+
+    @include responsive(md) {
+        max-width: 100px;
+    }
+}
+
+.navbar-out {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include responsive(sm) {
+        gap: 20px;
+    }
+
+    @include responsive(xxs) {
+        gap: 15px;
+        margin: 1px 0px;
+    }
+}
+
+.navbar-out__group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include responsive(sm) {
+        gap: 20px;
+    }
+
+    @include responsive(xxs) {
+        gap: 15px;
+    }
+
+    .search-icon {
+        color: $primary-color;
+    }
+
+    .nice-select {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        height: auto !important;
+        line-height: 1 !important;
+        display: flex;
+        align-items: center;
+        padding-left: 0px;
+        padding-right: 20px;
+        border-radius: 0px;
+
+        &::after {
+            width: 8px;
+            height: 8px;
+            margin-top: -6px;
+            border-color: $primary-color;
+            right: 4px;
+
+            @include responsive(xs) {
+                width: 8px;
+                height: 8px;
+                margin-top: -6px;
+            }
+        }
+
+        .current {
+            font-size: 16px;
+            font-weight: 600;
+            color: $primary-color;
+        }
+
+        .list {
+            position: absolute;
+            top: 150%;
+            left: unset;
+            right: 0px !important;
+            background-color: $quaternary-color;
+            box-shadow: 0px 4px 24px 0px rgba(19, 33, 110, 0.3);
+            min-width: 150px;
+            max-height: 300px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: #e4e4e4;
+                border-radius: 10px;
+
+                @include responsive(lg) {
+                    border-radius: 0px;
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $primary-color;
+                border-radius: 10px;
+
+                @include responsive(lg) {
+                    border-radius: 0px;
+                }
+            }
+
+            @include responsive(xs) {
+                min-width: 100px;
+            }
+
+            &:hover {
+                .selected {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .option {
+            background-color: $white;
+            color: $primary-color;
+            min-height: auto;
+            line-height: 28px;
+            padding: 8px 16px;
+            text-transform: capitalize;
+            font-weight: 600;
+            text-align: left;
+            font-size: 16px;
+
+            @include responsive(xs) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
+
+        .selected {
+            background-color: $secondary-color  !important;
+            color: $white;
+
+            &:hover {
+                color: $white  !important;
+            }
+        }
+    }
+}
+
+.navbar-toggler,
+.open-sidenav {
+    border: none;
+    padding: 0px;
+    line-height: 0px;
+
+    @include responsive(xs) {
+        margin: 0px;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    span {
+        transform: translateY(0px);
+    }
+
+    .icon-bar {
+        width: 35px;
+        height: 2px;
+        background-color: $primary-color;
+        margin: 0px;
+        display: block;
+        transition: all 0.3s;
+
+        @include responsive(xs) {
+            width: 30px;
+        }
+
+        @include responsive(xxs) {
+            width: 25px;
+        }
+    }
+
+    .middle-bar {
+        margin: 6px 0px;
+        opacity: 1;
+    }
+}
+
+.open-sidenav {
+    .icon-bar {
+        width: 24px;
+    }
+}
+
+.toggle-active {
+    .top-bar {
+        transform: rotate(-45deg) translate(-7px, 4px);
+        background: $secondary-color;
+    }
+
+    .middle-bar {
+        opacity: 0;
+    }
+
+    .bottom-bar {
+        transform: rotate(45deg) translate(-7px, -4px);
+        background: $secondary-color;
+    }
+}
+
+.navbar-collapse {
+    @include responsive(lg) {
+        margin-left: 0px;
+        margin-top: 28px;
+        max-height: 300px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #e4e4e4;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $secondary-color;
+            border-radius: 10px;
+        }
+    }
+}
+
+.nav-item {
+    @include responsive(lg) {
+        margin-bottom: 3px !important;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+.nav-link {
+    color: $primary-color;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 35px 20px !important;
+    transition: all 0.3s ease-in;
+
+    @include responsive(xl) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @include responsive(lg) {
+        padding: 12px 16px !important;
+        background-color: #f0f8fa;
+    }
+
+    &:hover {
+        color: $secondary-color;
+    }
+    &.active {
+        color: $secondary-color !important;
+    }
+}
+
+.dropdown {
+    .dropdown-toggle {
+        color: $primary-color  !important;
+
+        &:hover {
+            color: $secondary-color  !important;
+        }
+        &.active {
+            color: $secondary-color  !important;
+        }
+
+        @include responsive(lg) {
+            position: relative;
+        }
+
+        &::after {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            content: "\f107";
+            border: none;
+            font-size: 14px;
+            vertical-align: 0px !important;
+
+            @include responsive(xl) {
+                font-size: 14px;
+            }
+
+            @include responsive(lg) {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 100%;
+                margin: 0px;
+                border-left: 3px solid $white;
+            }
+        }
+    }
+
+    .show {
+        color: $primary-color  !important;
+        transition: $primary-transition;
+
+        &::after {
+            transform: rotate(180deg);
+
+            @include responsive(lg) {
+                border-right: 3px solid $white;
+                border-left: 0px;
+            }
+        }
+
+        @include responsive(minScreenLaptop) {
+            color: $primary-color  !important;
+
+            &::after {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .dropdown-menu {
+        margin: 0px;
+        padding: 0px;
+        background-color: $white;
+        margin-top: 0px;
+        border-top: 5px solid $secondary-color;
+        box-shadow: $primary-shadow;
+        border-radius: 0px;
+        transition: $secondary-transition;
+        max-height: 500px;
+        overflow-y: auto;
+        min-width: 14rem;
+
+        @include responsive(minScreenLaptop) {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #f0f8fa;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $secondary-color;
+            border-radius: 10px;
+        }
+
+        @include responsive(lg) {
+            width: 90%;
+            margin: 15px auto;
+        }
+
+        .dropdown-item {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 500;
+            padding: 10px 15px;
+            color: $primary-color;
+            border-bottom: 1px solid #e4e4e4;
+            transition: $primary-transition;
+
+            @include responsive(xl) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+                padding-left: 20px;
+            }
+            &.active {
+                background-color: $secondary-color;
+                color: $white;
+                padding-left: 20px;
+            }
+        }
+
+        .dropdown-item-active {
+            background-color: $quaternary-color;
+            color: $white;
+            padding-left: 20px;
+        }
+
+        li {
+            &:last-of-type {
+                .dropdown-item {
+                    border-bottom: 0px;
+                }
+            }
+        }
+    }
+
+    @include responsive(minScreenLaptop) {
+        &:hover {
+            .dropdown-menu {
+                margin-top: 0px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.header--secondary {
+    .navbar-collapse {
+        @include responsive(lg) {
+            margin-top: 25px;
+        }
+    }
+}
+
+// sidenav styles start
+.sidenav {
+    width: 425px;
+    display: block;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: -425px;
+    bottom: 0px;
+    overflow-y: auto;
+    background-color: $white;
+    box-shadow: $primary-shadow;
+    padding: 0px;
+    z-index: 9999;
+    transition: $primary-transition;
+
+    @include responsive(sm) {
+        max-width: 300px;
+    }
+}
+
+.sidenav-active {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.navbar-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 60px;
+    padding: 0px 0px 40px;
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+
+    @include responsive(sm) {
+        gap: 40px;
+        padding: 0px 0px 20px;
+    }
+
+    .close-sidebar-wrapper {
+        width: 100%;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        padding: 35px 40px;
+        z-index: 99;
+        background-color: $white;
+
+        @include responsive(md) {
+            padding: 20px 20px 20px;
+        }
+    }
+
+    .close-sidebar {
+        color: $secondary-color  !important;
+        line-height: 0px;
+
+        i {
+            font-size: 30px;
+            color: $secondary-color;
+        }
+
+        &:hover {
+            color: $quinary-color  !important;
+        }
+    }
+
+    .close-sidebar-active {
+        box-shadow: $primary-shadow;
+    }
+
+    .intro {
+        width: 100%;
+        text-align: center;
+        padding: 0px 40px;
+
+        @include responsive(sm) {
+            padding: 0px 20px;
+        }
+    }
+
+    ul {
+        width: 100%;
+        padding: 0px 40px;
+
+        @include responsive(sm) {
+            padding: 0px 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+
+            &:last-of-type {
+                margin-bottom: 0px;
+            }
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 0px;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            color: $primary-color;
+            font-size: 16px;
+            font-weight: 600;
+
+            i {
+                position: absolute;
+                left: -10px;
+                transition: $primary-transition;
+            }
+
+            &:hover {
+                color: $secondary-color;
+                padding-left: 20px;
+
+                i {
+                    left: 0px;
+                }
+            }
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 0px 40px 40px;
+
+        @include responsive(sm) {
+            padding: 0px 20px 40px;
+        }
+
+        .input-group-btn--secondary {
+            border: 1px solid #00000050;
+        }
+
+        .button {
+            &:hover {
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+    }
+}
+
+.header--tertiary {
+    .nav-item {
+        .button {
+            background-color: $secondary-color;
+            color: $white;
+            width: 100%;
+
+            &:hover {
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+    }
+}
+
+/* ==== 
+ --------- (4.1) header styles end ---------
+ ==== */
